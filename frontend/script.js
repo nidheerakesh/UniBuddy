@@ -47,7 +47,7 @@ const languageSelect = document.getElementById('language-select');
 const toneSelect = document.getElementById('tone-select');
 const modeCards = document.querySelectorAll('.mode-card');
 
-const backendBaseUrl = 'http://127.0.0.1:5000';
+const backendBaseUrl = 'https://unibuddy-gwal.onrender.com';
 
 let chatHistory = [];
 let isFirstExplanationTurn = true;
