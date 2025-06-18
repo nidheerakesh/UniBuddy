@@ -1,0 +1,360 @@
+/* style.css */
+
+/* --- Base Color Variables (Green Mist Theme - Default) --- */
+:root {
+    /* Backgrounds */
+    --bg-gradient-start: #d8e2dc; /* Main background color */
+    --bg-gradient-end: #e0e9e1;   /* Slightly lighter for gradient */
+    --bg-card: #ffffff;           /* Card background */
+    --bg-chat-area: #f5f8f6;      /* Chat messages background */
+    --bg-bubble-bot: #c3d9d6;     /* Bot message bubble background */
+    --bg-input-field: #f5f8f6;    /* Input field background */
+
+    /* Text Colors */
+    --text-primary: #131614;      /* Main dark text */
+    --text-secondary: #6c7a71;    /* Muted secondary text */
+    --text-user-bubble: #131614;  /* User bubble text */
+    --text-bot-bubble: #131614;   /* Bot bubble text */
+    --text-placeholder: #6c7a71; /* Placeholder text */
+
+    /* Accent & Button Colors */
+    --accent-primary: #d8e2dc;    /* Submit button background */
+    --accent-hover: #c3d9d6;      /* Submit button hover */
+
+    /* Border & Outline Colors */
+    --border-color: #d9dddb;      /* General border color */
+    --focus-outline: rgba(216, 226, 220, 0.5); /* Focus glow */
+
+    /* Scrollbar Colors */
+    --scrollbar-track: #f5f8f6;
+    --scrollbar-thumb: #b7c7c1;
+    --scrollbar-thumb-hover: #8bc297;
+
+    /* Theme Button Colors (for the theme buttons themselves) */
+    --theme-button-bg: #e0e9e1;
+    --theme-button-text: #333;
+    --theme-button-border: #b7c7c1;
+    --theme-button-selected-bg: var(--accent-primary);
+    --theme-button-selected-text: #131614; /* Dark text on selected button */
+    --theme-button-selected-border: var(--accent-primary);
+}
+
+/* --- Cherry Blossom Pink Theme --- */
+body.cherry-blossom-pink-theme {
+    /* Backgrounds */
+    --bg-gradient-start: #fbf9f9; /* Main background color */
+    --bg-gradient-end: #f5f0f0;   /* Slightly darker for gradient */
+    --bg-card: #ffffff;           /* Card background */
+    --bg-chat-area: #fbf9f9;      /* Chat messages background */
+    --bg-bubble-bot: #f5e7e9;     /* Bot message bubble background (soft pink) */
+    --bg-input-field: #fbf9f9;    /* Input field background */
+
+    /* Text Colors */
+    --text-primary: #1a0f11;      /* Main dark text */
+    --text-secondary: #8f565f;    /* Muted secondary text */
+    --text-user-bubble: #1a0f11;  /* User bubble text */
+    --text-bot-bubble: #1a0f11;   /* Bot bubble text */
+    --text-placeholder: #8f565f; /* Placeholder text */
+
+    /* Accent & Button Colors */
+    --accent-primary: #edafb8;    /* Submit button background */
+    --accent-hover: #e093b5;      /* Submit button hover */
+
+    /* Border & Outline Colors */
+    --border-color: #e4d2d5;      /* General border color */
+    --focus-outline: rgba(237, 175, 184, 0.5); /* Focus glow */
+
+    /* Scrollbar Colors */
+    --scrollbar-track: #fbf9f9;
+    --scrollbar-thumb: #e4d2d5;
+    --scrollbar-thumb-hover: #edafb8;
+
+    /* Theme Button Colors (for the theme buttons themselves) */
+    --theme-button-bg: #f5f0f0;
+    --theme-button-text: #333;
+    --theme-button-border: #e4d2d5;
+    --theme-button-selected-bg: var(--accent-primary);
+    --theme-button-selected-text: #1a0f11; /* Dark text on selected button */
+    --theme-button-selected-border: var(--accent-primary);
+}
+
+/* --- Dark Mode Theme (based on image_4abb0b.png) --- */
+body.dark-mode-theme {
+    /* Backgrounds */
+    --bg-gradient-start: #121420; /* Rich black */
+    --bg-gradient-end: #1B2432;   /* Gunmetal */
+    --bg-card: #2C2B3C;           /* Raisin black */
+    --bg-chat-area: #403F4C;      /* Onyx */
+    --bg-bubble-bot: #403F4C;     /* Onyx */
+    --bg-input-field: #2C2B3C;    /* Input field background */
+
+    /* Text Colors */
+    --text-primary: #E0E0E0;      /* Light grey */
+    --text-secondary: #A0A0A0;    /* Muted light text */
+    --text-user-bubble: #1b0f0e;  /* Keep dark text on user bubble for contrast */
+    --text-bot-bubble: #E0E0E0;   /* Light text on dark bot bubble */
+    --text-placeholder: #A0A0A0; /* Placeholder text */
+
+    /* Accent & Button Colors */
+    --accent-primary: #9BA4B5;    /* Muted silver */
+    --accent-hover: #7D889E;      /* Slightly darker hover */
+
+    /* Border & Outline Colors */
+    --border-color: #403F4C;      /* Onyx */
+    --focus-outline: rgba(155, 164, 181, 0.5); /* Lighter focus glow */
+
+    /* Scrollbar Colors */
+    --scrollbar-track: #2C2B3C;
+    --scrollbar-thumb: #403F4C;
+    --scrollbar-thumb-hover: #9BA4B5;
+
+    /* Theme Button Colors (for the theme buttons themselves) */
+    --theme-button-bg: #1B2432;
+    --theme-button-text: #E0E0E0;
+    --theme-button-border: #403F4C;
+    --theme-button-selected-bg: var(--accent-primary);
+    --theme-button-selected-text: #1b0f0e; /* Dark text for selected button */
+    --theme-button-selected-border: var(--accent-primary);
+}
+
+/* --- Light Pastel Theme (based on image_558da7.png) --- */
+body.light-pastel-theme {
+    /* Backgrounds */
+    --bg-gradient-start: #F5F5F5; /* Very light grey */
+    --bg-gradient-end: #EEEEEE;   /* Slightly darker light grey */
+    --bg-card: #FFFFFF;           /* White */
+    --bg-chat-area: #F9F9F9;      /* Very light off-white */
+    --bg-bubble-bot: #EAEAEA;     /* Light grey for bot bubble */
+    --bg-input-field: #FFFFFF;    /* White */
+
+    /* Text Colors */
+    --text-primary: #333333;      /* Dark grey text */
+    --text-secondary: #666666;    /* Muted grey text */
+    --text-user-bubble: #333333;  /* Dark grey */
+    --text-bot-bubble: #333333;   /* Dark grey */
+    --text-placeholder: #666666; /* Muted grey */
+
+    /* Accent & Button Colors */
+    --accent-primary: #D3D3D3;    /* Light grey accent (matches button border) */
+    --accent-hover: #C0C0C0;      /* Silver for hover */
+
+    /* Border & Outline Colors */
+    --border-color: #DDDDDD;      /* Very light grey border */
+    --focus-outline: rgba(211, 211, 211, 0.5); /* Light grey focus */
+
+    /* Scrollbar Colors */
+    --scrollbar-track: #F9F9F9;
+    --scrollbar-thumb: #C0C0C0;
+    --scrollbar-thumb-hover: #A9A9A9;
+
+    /* Theme Button Colors */
+    --theme-button-bg: #EAEAEA;
+    --theme-button-text: #333333;
+    --theme-button-border: #D3D3D3; /* Light grey border */
+    --theme-button-selected-bg: var(--accent-primary);
+    --theme-button-selected-text: #333333;
+    --theme-button-selected-border: var(--accent-primary);
+}
+
+
+/* --- General Body and Container Styling (using variables) --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem; /* px-4 in Tailwind */
+    transition: background 0.3s ease; /* Smooth transition for background */
+}
+
+/* Main container override */
+.bg-white.max-w-4xl { /* Target specific Tailwind class if needed, or replace bg-white in HTML */
+    background-color: var(--bg-card) !important; /* !important needed to override Tailwind directly */
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; /* Ensure shadow remains or adapts */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header and main title text */
+h1 { /* Target all h1 now */
+    color: var(--text-primary) !important; /* Overriding potential Tailwind defaults */
+    transition: color 0.3s ease;
+}
+
+p.mt-2 { /* Target specific p tag */
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+/* --- Chat Messages Area --- */
+#chat-messages {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-chat-area);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Custom scrollbar for chat messages */
+#chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+#chat-messages::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
+}
+#chat-messages::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+}
+#chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+.message-bubble {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.4;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.message-bubble.user {
+    background-color: var(--accent-primary); /* User bubble uses accent */
+    color: var(--text-user-bubble);
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message-bubble.bot {
+    background-color: var(--bg-bubble-bot); /* Bot bubble uses specific background */
+    color: var(--text-bot-bubble);
+    border: 1px solid var(--border-color);
+    align-self: flex-start;
+}
+
+/* AI icon background color */
+.message-bubble.bot span.w-6.h-6 {
+    background-color: var(--accent-primary) !important; /* AI icon uses accent color */
+    color: var(--text-user-bubble) !important; /* Text on AI icon */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* --- Input and Send Button --- */
+/* Targeting specific classes to override Tailwind for the input container */
+.flex.items-center.w-full.rounded-full.overflow-hidden {
+    background-color: var(--bg-input-field) !important;
+    border: 1px solid var(--border-color) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#user-input {
+    color: var(--text-primary) !important;
+    background-color: transparent !important;
+    border: none !important; /* Remove individual input border */
+    transition: color 0.3s ease;
+}
+
+#user-input::placeholder {
+    color: var(--text-placeholder) !important;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: var(--focus-outline); /* Apply focus border through container if needed */
+    box-shadow: 0 0 0 2px var(--focus-outline); /* Focus outline for the input container */
+}
+
+#send-button {
+    background-color: var(--accent-primary) !important;
+    color: var(--text-user-bubble) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: var(--accent-hover) !important;
+}
+
+/* --- Copy Button --- */
+#copy-button {
+    background-color: var(--theme-button-bg); /* Use theme button bg for consistency */
+    color: var(--theme-button-text);
+    border: 1px solid var(--theme-button-border); /* Add border */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+#copy-button:hover {
+    opacity: 0.8;
+}
+
+/* --- Mode Cards (5, 10, 15 Year Old Mode) --- */
+.mode-card {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-chat-area); /* Using chat area bg for cards */
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mode-card h2 {
+    color: var(--text-primary);
+}
+
+.mode-card h2 svg {
+    color: var(--accent-primary) !important;
+}
+
+.mode-card p {
+    color: var(--text-secondary);
+}
+
+.mode-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Active mode card styling */
+.mode-card.active {
+    border-color: var(--accent-primary) !important; /* Highlight active mode card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Theme Buttons Specific Styling --- */
+#theme-buttons {
+    /* New styling to position buttons absolutely */
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    z-index: 10; /* Ensure buttons are above the image */
+}
+
+.theme-button {
+    background-color: var(--theme-button-bg);
+    color: var(--theme-button-text);
+    border-color: var(--theme-button-border);
+}
+
+.theme-button.selected {
+    background-color: var(--theme-button-selected-bg) !important;
+    color: var(--theme-button-selected-text) !important;
+    border-color: var(--theme-button-selected-border) !important;
+    cursor: default; /* Indicate it's already active */
+}
+
+
+/* --- Loading Dots Animation --- */
+.loading-dots span {
+    animation: blink 1.4s infinite ease-in-out both;
+}
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+}
