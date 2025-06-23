@@ -1,17 +1,13 @@
 # app.py
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
 import os
-
 app = Flask(__name__)
-CORS(app) # Enable CORS for all routes
+CORS(app) 
 
-# Configure Gemini API
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# Tone mapping for Gemini prompt
 TONE_PROMPTS = {
     "neutral": "",
     "friendly": "Adopt a friendly and approachable tone.",
@@ -19,7 +15,6 @@ TONE_PROMPTS = {
     "humorous": "Add a touch of humor.",
 }
 
-# Language mapping for Gemini prompt
 LANGUAGE_PROMPTS = {
     "english": "Explain in clear English.",
     "hindi": "Explain in Hindi.",
@@ -27,7 +22,6 @@ LANGUAGE_PROMPTS = {
     # Add more languages as needed
 }
 
-# Mode-specific prompt instructions for different age groups
 MODE_PROMPTS = {
     "5": "Explain this as if you are talking to a very young child (5-year-old). Use extremely simple words, very short sentences. Avoid any jargon or complex ideas completely. Be super simple.",
     "10": "Explain this in a way that a 10-year-old could easily understand. Use clear, straightforward language, give simple analogies or examples, and avoid overly complex terms. Focus on the main idea and make it accessible.",
