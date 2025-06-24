@@ -1,125 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UniBuddy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  
-  <body id="app-body" class="flex items-center justify-center min-h-screen px-4">
-    
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UniBuddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
 
-    <div id="theme-buttons" class="fixed top-4 left-4 flex flex-wrap gap-2 z-50">
-        <button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="green-mist">Green Mist</button>
-        <button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="cherry-blossom-pink">Cherry Blossom Pink</button>
-        <button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="dark-mode">Dark Mode</button>
-        <button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="light-pastel">Light Pastel</button>
-    </div>
+<body id="app-body" class="flex items-center justify-center min-h-screen px-4">
 
-<!-- Sidebar Toggle Button (Bottom Right) -->
-<button id="toggle-todo" class="fixed bottom-6 right-6 z-50 bg-[var(--accent-primary)] text-white p-3 rounded-full shadow-xl hover:scale-110 transition-all duration-200">
-  📝
-</button>
-
-
-<!-- To-Do Sidebar -->
-<div id="todo-sidebar" class="fixed top-0 left-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-40 rounded-r-2xl overflow-y-auto">
-  <div class="p-4">
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-xl font-bold text-[var(--accent-primary)]">📋 Tasks</h2>
-      <button id="close-todo" class="text-gray-400 hover:text-red-400 text-lg">✖️</button>
-    </div>
-
-    <div class="flex gap-2 mb-4">
-      <input id="new-task-input" type="text" placeholder="New Task..." class="w-full px-3 py-2 rounded-lg border border-gray-300 dark:bg-gray-800 dark:text-white focus:outline-none" />
-      <button id="add-task-btn" class="bg-[var(--accent-primary)] text-white px-3 py-2 rounded-lg hover:opacity-90">Add</button>
-    </div>
-
-    <ul id="task-list" class="space-y-2 text-sm"></ul>
-  </div>
+<div id="theme-buttons" class="fixed top-4 left-4 flex flex-wrap gap-2 z-50">
+<button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="green-mist">Green Mist</button>
+<button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="cherry-blossom-pink">Cherry Blossom Pink</button>
+<button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="dark-mode">Dark Mode</button>
+<button class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300" data-theme="light-pastel">Light Pastel</button>
 </div>
 
-    <div class="fixed top-4 right-4 flex flex-wrap gap-2 z-50">
-        <select id="language-select" class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300">
-            <option value="english">English</option>
-            <option value="hindi">Hindi</option>
-            <option value="spanish">Spanish</option>
-            </select>
+<button id="toggle-todo" class="fixed bottom-6 right-6 z-50 bg-[var(--accent-primary)] text-white p-3 rounded-full shadow-xl hover:scale-110 transition-all duration-200">
+📝
+</button>
 
-        <select id="tone-select" class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300">
-            <option value="neutral">Neutral</option>
-            <option value="friendly">Friendly</option>
-            <option value="formal">Formal</option>
-            <option value="humorous">Humorous</option>
-        </select>
-    </div>
+<div id="todo-sidebar" class="fixed top-0 left-0 h-full w-80 bg-white dark:bg-gray-900 shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-40 rounded-r-2xl overflow-y-auto">
+<div class="p-4">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold text-[var(--accent-primary)]">📋 Tasks</h2>
+<button id="close-todo" class="text-gray-400 hover:text-red-400 text-lg">✖️</button>
+</div>
+<div class="flex gap-2 mb-4">
+<input id="new-task-input" type="text" placeholder="New Task..." class="w-full px-3 py-2 rounded-lg border border-gray-300 dark:bg-gray-800 dark:text-white focus:outline-none" />
+<button id="add-task-btn" class="bg-[var(--accent-primary)] text-white px-3 py-2 rounded-lg hover:opacity-90">Add</button>
+</div>
+<ul id="task-list" class="space-y-2 text-sm"></ul>
+</div>
+</div>
 
-    <div class="bg-white max-w-4xl w-full rounded-3xl shadow-xl p-6 md:p-10 flex flex-col h-[90vh]">
-      <div class="flex flex-col gap-6 mb-6">
-              <div class="text-left">
-          <h1 class="text-3xl md:text-4xl font-black">UniBuddy</h1>
-          <p class="mt-2">Your all in one college companion</p>
-        </div>
-      </div>
+<div class="fixed top-4 right-4 flex flex-wrap gap-2 z-50">
+<select id="language-select" class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300">
+<option value="english">English</option>
+<option value="hindi">Hindi</option>
+<option value="spanish">Spanish</option>
+</select>
+<select id="tone-select" class="theme-button px-2 py-1 rounded-lg text-xs font-semibold border transition-colors duration-300">
+<option value="neutral">Neutral</option>
+<option value="friendly">Friendly</option>
+<option value="formal">Formal</option>
+<option value="humorous">Humorous</option>
+</select>
+</div>
 
-      <div id="chat-messages" class="flex-1 overflow-y-auto rounded-xl p-4 md:p-6 mb-4 flex flex-col space-y-3 shadow-inner">
-        </div>
+<div id="mode-sidebar" class="fixed top-24 left-4 flex flex-col gap-3 z-40">
+<div id="mode-5" class="mode-card w-44 p-3 rounded-xl shadow hover:scale-105 transition cursor-pointer" data-mode="5">
+<h2 class="font-bold text-base">5-Year-Old Mode</h2>
+<p class="text-xs">Simple explanations</p>
+</div>
+<div id="mode-10" class="mode-card w-44 p-3 rounded-xl shadow hover:scale-105 transition cursor-pointer" data-mode="10">
+<h2 class="font-bold text-base">10-Year-Old Mode</h2>
+<p class="text-xs">Easy to understand</p>
+</div>
+<div id="mode-15" class="mode-card w-44 p-3 rounded-xl shadow hover:scale-105 transition cursor-pointer" data-mode="15">
+<h2 class="font-bold text-base">15-Year-Old Mode</h2>
+<p class="text-xs">More complex answers</p>
+</div>
+<div id="mode-genz" class="mode-card w-44 p-3 rounded-xl shadow hover:scale-105 transition cursor-pointer" data-mode="genz">
+<h2 class="font-bold text-base">Buddy Chat</h2>
+<p class="text-xs">Casual AI buddy</p>
+</div>
+<div id="mode-nerd" class="mode-card w-44 p-3 rounded-xl shadow hover:scale-105 transition cursor-pointer" data-mode="nerd">
+<h2 class="font-bold text-base">Nerd Mode</h2>
+<p class="text-xs">Educational tips</p>
+</div>
+</div>
 
-      <div class="mt-auto">
-        <div class="flex items-center w-full rounded-full overflow-hidden">
-          <input type="text" id="user-input" placeholder="Ask me anything..." class="flex-1 bg-transparent px-4 py-2 text-sm focus:outline-none placeholder-gray-500" />
-          <span id="char-counter" class="text-xs text-gray-500 mr-2">0/200</span> <button id="send-button" class="px-5 py-2 text-sm font-bold rounded-full hover:opacity-80 transition">Submit</button>
-        </div>
-        <button id="copy-button" class="mt-2 px-4 py-2 rounded-lg text-sm font-semibold border transition-colors duration-300 w-full">Copy Explanation</button>
+<div class="bg-white max-w-6xl w-full rounded-3xl shadow-xl p-6 md:p-10 flex flex-col h-[90vh] ml-48">
+<div class="flex flex-col gap-6 mb-6">
+<div class="text-left">
+<h1 class="text-3xl md:text-4xl font-black">UniBuddy</h1>
+<p class="mt-2">Your all in one college companion</p>
+</div>
+</div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-          <div id="mode-5" class="mode-card rounded-xl p-4 hover:shadow-md transition cursor-pointer" data-mode="5">
-            <h2 class="font-bold text-base flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              5-Year-Old Mode
-            </h2>
-            <p class="text-sm">Answer in very simple words</p>
-          </div>
-          <div id="mode-10" class="mode-card rounded-xl p-4 hover:shadow-md transition cursor-pointer" data-mode="10">
-            <h2 class="font-bold text-base flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              10-Year-Old Mode
-            </h2>
-            <p class="text-sm">Answers that are easy to understand</p>
-          </div>
-          <div id="mode-15" class="mode-card rounded-xl p-4 hover:shadow-md transition cursor-pointer" data-mode="15">
-            <h2 class="font-bold text-base flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              15-Year-Old Mode
-            </h2>
-            <p class="text-sm">More complex answers</p>
-          </div>
-          <div id="mode-genz" class="mode-card rounded-xl p-4 hover:shadow-md transition cursor-pointer" data-mode="genz">
-            <h2 class="font-bold text-base flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-               Buddy Chat Mode
-            </h2>
-            <p class="text-sm">Your AI chat buddy</p>
-          </div>
-          <div id="mode-nerd" class="mode-card rounded-xl p-4 hover:shadow-md transition cursor-pointer" data-mode="nerd">
-            <h2 class="font-bold text-base flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Educational advice mode
-            </h2>
-            <p class="text-sm">Get educational advice and tips</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div id="chat-messages" class="flex-1 overflow-y-auto rounded-xl p-4 md:p-6 mb-4 flex flex-col space-y-3 shadow-inner">
+</div>
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <script src="script.js"></script>
-  </body>
+<div class="mt-auto">
+<div class="flex items-center w-full rounded-full overflow-hidden">
+<input type="text" id="user-input" placeholder="Ask me anything..." class="flex-1 bg-transparent px-4 py-2 text-sm focus:outline-none placeholder-gray-500" />
+<span id="char-counter" class="text-xs text-gray-500 mr-2">0/200</span>
+<button id="send-button" class="px-5 py-2 text-sm font-bold rounded-full hover:opacity-80 transition">Submit</button>
+</div>
+<button id="copy-button" class="mt-2 px-4 py-2 rounded-lg text-sm font-semibold border transition-colors duration-300 w-full">Copy Explanation</button>
+</div>
+</div>
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script src="script.js"></script>
+</body>
 </html>
